@@ -1,0 +1,23 @@
+{
+  "name": "fast-ticktick",
+  "version": "0.1.2",
+  "description": "Faster and more user-friendly client for the TickTick todo app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "todo",
+    "ticktick"
+  ],
+  "author": "Boris Joffe",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

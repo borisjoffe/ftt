@@ -1,0 +1,46 @@
+# JS
+build/
+
+# Temporary files
+*~
+
+# Vim
+*.swp
+*.swo
+tags
+.ctags
+session.vim
+
+# Secrets / Environment
+*.config
+*.env
+test
+env
+*secret*
+.gitignore.local
+.my.cnf*
+
+# Dev specific
+*.pyc
+node_modules/
+npm-debug.log.*
+Gemfile.lock
+
+# Revisions
+patch/
+*.patch
+*.diff
+*.old
+*.orig
+*.new
+bak/
+*.bak
+
+# Ops
+.vagrant/
+
+# Logging / Debugging
+*.log
+*.trace
+*.dump
+nohup.out
