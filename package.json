@@ -1,6 +1,6 @@
 {
   "name": "fast-ticktick",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Faster and more user-friendly client for the TickTick todo app",
   "main": "index.js",
   "scripts": {
