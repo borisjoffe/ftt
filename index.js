@@ -1,6 +1,11 @@
+'use strict';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
+import h from 'react-hyperscript';
 
 console.log('hello');
 
-ReactDOM.render(<h1>Hello</h1>, document.getElementById('app'));
+const App = h('h1', 'hello');
+
+ReactDOM.render(App, document.getElementById('app'));

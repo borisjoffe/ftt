@@ -14,7 +14,8 @@
   "license": "AGPL-3.0",
   "dependencies": {
     "react": "^15.2.1",
-    "react-dom": "^15.2.1"
+    "react-dom": "^15.2.1",
+    "react-hyperscript": "^2.4.0"
   },
   "devDependencies": {
     "webpack": "^1.13.1",
