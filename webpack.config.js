@@ -1,7 +1,16 @@
+'use strict';
+
+var path = require('path');
+// var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
-	entry: './index.js',
+	// TODO: fix bug with not finding index module on initial load
+	entry: [
+		// '/webpack-dev-server/',
+		'./index.js',
+	],
 	output: {
-		path: 'build',
+		path: path.resolve(__dirname, 'build'),
 		publicPath: '/build/',
 		filename: 'bundle.js',
 	},
@@ -13,11 +22,13 @@ module.exports = {
 			query: {
 				cacheDirectory: true,
 				presets: ['es2015', 'react'],
-				development: {
-					presets: [''],
-				},
 				plugins: ['transform-runtime'],
 			},
 		}],
 	},
+	// TODO: make this work
+	// plugins: [new HtmlWebpackPlugin({
+	// 	template: 'index.html',
+	// 	inject: true,
+	// })],
 };
