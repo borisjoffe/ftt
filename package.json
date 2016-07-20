@@ -1,12 +1,13 @@
 {
   "name": "fast-ticktick",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Faster and more user-friendly client for the TickTick todo app",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build",
+    "start": "npm run serve",
     "dev": "webpack-dev-server --inline --hot",
     "build": "webpack",
+    "serve": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -29,6 +30,7 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
     "html-webpack-plugin": "^2.22.0",
+    "nodemon": "^1.9.2",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   }

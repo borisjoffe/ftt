@@ -9,7 +9,8 @@ const proxy = require('koa-proxy');
 const PORT = 3000;
 
 app.use(proxy({
-  host: 'https://www.ticktick.com/api/v2'
+  // host: 'https://www.ticktick.com/api/v2'
+  host: 'https://www.ticktick.com/'
 }));
 
 // app.use(function *(){
