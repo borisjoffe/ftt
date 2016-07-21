@@ -2,21 +2,22 @@
 
 // import koa from 'koa';
 const koa = require('koa');   // TODO: change to import
+const proxy = require('koa-proxy');
+const mount = require('koa-mount');
 
 const app = koa();
-const proxy = require('koa-proxy');
 
 const PORT = 3000;
 
-app.use(proxy({
-  // host: 'https://www.ticktick.com/api/v2'
-  host: 'https://www.ticktick.com/'
-}));
+// Ticktick proxy
+app.use(mount('/tt', proxy({
+  host: 'https://www.ticktick.com/',
+})));
 
 // app.use(function *(){
 //   this.body = 'Hello World';
 // });
-//
+
 app.listen(PORT);
 
 console.log('listening on:', PORT);
