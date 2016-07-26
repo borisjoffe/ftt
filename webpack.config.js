@@ -6,8 +6,10 @@ var path = require('path');
 module.exports = {
 	// TODO: fix bug with not finding index module on initial load
 	entry: [
+		// 'webpack-dev-server/client?http://localhost:8080/',
+		// 'webpack/hot/dev-server',
 		// '/webpack-dev-server/',
-		'./index.js',
+		'./client/index.js',
 	],
 	output: {
 		path: path.resolve(__dirname, 'build'),
