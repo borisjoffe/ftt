@@ -7,6 +7,7 @@ const app = require('koa')();
 const proxy = require('koa-proxy');
 const mount = require('koa-mount');
 const router = require('koa-router')();
+const serve = require('koa-static');
 
 const PORT = 3000;
 
@@ -32,16 +33,27 @@ if (app.env === 'development') {
 
 }
 
-router.get('/', function* () {
+
+// Regular routes
+router.get('/hello', function* () {
 	this.body = 'hello';
+
 });
 
 app.use(router.middleware());
+
+
+// Static route
+app.use(serve('./client', {
+	// See https://github.com/koajs/static for options
+}));
+
 
 // Ticktick proxy
 app.use(mount('/tt', proxy({
   host: 'https://www.ticktick.com/',
 })));
+
 
 app.listen(PORT);
 
