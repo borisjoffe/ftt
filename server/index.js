@@ -1,7 +1,9 @@
 'use strict';
 
+// TODO: change to imports
 // import koa from 'koa';
-const app = require('koa')();   // TODO: change to import
+
+const app = require('koa')();
 const proxy = require('koa-proxy');
 const mount = require('koa-mount');
 const router = require('koa-router')();
@@ -13,7 +15,7 @@ console.log(`app environment is: '${app.env}'`);
 if (app.env === 'development') {
 	const webpack = require('webpack');
 	const webpackMiddleware = require('koa-webpack-dev-middleware');
-	const webpackConfig = require('./webpack.config.js');
+	const webpackConfig = require('../webpack.config.js');
 
 	app.use(webpackMiddleware(webpack(webpackConfig), {
 		noInfo: false,
