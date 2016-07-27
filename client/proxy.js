@@ -1,7 +1,8 @@
 'use strict';
 
 // auth by cookies?
-export const baseUrl = 'https://www.ticktick.com';
+// export const baseUrl = 'https://www.ticktick.com';
+export const baseUrl = 'http://' + window.location.hostname + '/tt';
 export const apiPath = '/api/v2';
 export const apiUrl = baseUrl + apiPath;
 
