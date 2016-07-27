@@ -1,12 +1,13 @@
 'use strict';
 
+const webpack = require('webpack');
 var path = require('path');
 // var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	// TODO: fix bug with not finding index module on initial load
 	entry: [
-		// 'webpack-dev-server/client?http://localhost:8080/',
+		// 'webpack-dev-server/client?http://127.0.0.1:8080/',
 		// 'webpack/hot/dev-server',
 		// '/webpack-dev-server/',
 		'./client/index.js',
@@ -28,9 +29,15 @@ module.exports = {
 			},
 		}],
 	},
-	// TODO: make this work
-	// plugins: [new HtmlWebpackPlugin({
-	// 	template: 'index.html',
-	// 	inject: true,
-	// })],
+	plugins: [
+		// new webpack.optimize.CommonsChunkPlugin('common.js'),
+		new webpack.optimize.OccurenceOrderPlugin(),
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NoErrorsPlugin(),
+		// TODO: make this work
+		// new HtmlWebpackPlugin({
+		// 	template: 'index.html',
+		// 	inject: true,
+		// }),
+	],
 };

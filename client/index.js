@@ -5,6 +5,10 @@ import ReactDOM from 'react-dom';
 import h from 'react-hyperscript';
 import * as proxy from './proxy.js';
 
+if (module.hot) {
+	module.hot.accept();
+}
+
 console.log(proxy.apiUrl);
 console.log(proxy);
 

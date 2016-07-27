@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "start": "npm run serve",
-    "dev": "webpack-dev-server --inline --hot",
+    "dev": "webpack-dev-server --inline --content-base client/",
     "build": "webpack",
     "serve": "nodemon --watch server --watch webpack.config.js --watch package.json server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -33,9 +33,9 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
     "html-webpack-plugin": "^2.22.0",
-    "koa-webpack-dev-middleware": "^1.2.1",
     "nodemon": "^1.9.2",
     "webpack": "^1.13.1",
+    "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "^1.14.1"
   }
 }
