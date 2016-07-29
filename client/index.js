@@ -12,23 +12,39 @@ if (module.hot) {
 console.log(proxy.apiUrl);
 console.log(proxy);
 
-function downloadJson() {
-	fetch(proxy.settings, {
+function downloadJson(url) {
+	return fetch(url, {
+		method: 'GET',
 		credentials: 'include',   // or same-origin
-	}).then((data) => {
-		console.log(data);
+	}).then((resp) => {
+		if (resp.ok) {
+			console.log(resp);
+			return resp.json();
+		} else {
+			console.error('resp not ok:', resp);
+		}
 	}).catch((err) => {
 		// TODO: display error
 		console.error(err);
 	});
 }
 
+const getLists = () => {
+	downloadJson(proxy.lists())
+		.then(lists => { data.lists = lists; })
+		.catch(console.error);
+};
+
+var data = {};
+window.data = data;
+
 const App = React.createClass({
 	getInitialState: function () {
 		return { counter: 0 };
 	},
 
-	downloadJson: downloadJson, // TODO: move?
+	// TODO: move?
+	downloadJson: getLists,
 
 	handleClick: function () {
 		this.setState({counter: this.state.counter + 1});
