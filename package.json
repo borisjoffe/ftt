@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "start": "npm run serve",
-    "dev": "webpack-dev-server --inline --content-base client/",
+    "dev": "webpack-dev-server",
     "build": "webpack",
     "serve": "nodemon --watch server --watch webpack.config.js --watch package.json server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"

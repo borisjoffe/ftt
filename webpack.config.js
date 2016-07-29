@@ -4,6 +4,9 @@ const webpack = require('webpack');
 var path = require('path');
 // var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+// Config options
+// https://webpack.github.io/docs/configuration.html
+
 module.exports = {
 	// TODO: fix bug with not finding index module on initial load
 	entry: [
@@ -40,4 +43,13 @@ module.exports = {
 		// 	inject: true,
 		// }),
 	],
+
+	// below section seems to fix webpack stale cache issue after js error
+	// FIXME: doesn't always work
+	devServer: {
+		contentBase: './client',
+		inline: true,
+	},
+
+	devtool: 'eval',
 };
